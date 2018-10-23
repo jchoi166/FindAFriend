@@ -1,5 +1,6 @@
-const path = require('path')
+// const calc = require('../data/calc')
 const friends = require('../data/friends')
+
 
 module.exports = function (app){
 
@@ -7,11 +8,13 @@ module.exports = function (app){
        res.json(friends)
     })
     app.post('/api/friends', function (req, res){
+        res.sendStatus(200)
         newInfo = req.body
-        friends.push(newInfo)
+        newFriend = friends.calculator(newInfo)
+        // console.log('this is new friend after calculator has run:' + newFriend)
+        friends.friendInfo.push(newInfo)
         console.log("new data added!")
         console.log(newInfo)
-        res.sendStatus(200)
     })
     
 }

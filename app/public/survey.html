@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,48 +8,209 @@
     <title>Document</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css'>
 </head>
+
 <body>
-    <h1>Survey Questions</h1> 
+    <h1>Survey Questions</h1>
 
     <div class="row">
         <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name" placeholder= "first name"></label>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="name" type="text" class="validate" placeholder="Your Name Here">
+                    <label for="name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="photo" type="text" class="validate" placeholder="Link To Photo Here">
+                    <label for="photo">Profile Picture</label>
+                </div>
             </div>
-            <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate">
-              <label for="last_name" placeholder= "last name"></label>
+            <div id="surveyForm">
+                <h4>Question 1</h4>
+                <h6>Your mind is always buzzing with unexplored ideas and plans.</h6>
+                <div class="input-field col s12">
+                    <select id="q1">
+                        <option value="" selected>Choose your option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+                <h4>Question 2</h4>
+                <h6>Generally speaking, you rely more on your experience than your imagination.</h6>
+                <div class="input-field col s12">
+                    <select id="q2">
+                        <option value="" selected>Choose your option</option>
+                        <option value="1">1 (Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Strongly Agree)</option>
+                    </select>
+                </div>
+
             </div>
-          </div>
-          <button class="btn waves-effect waves-light" type="submit" name="action" id= "submit">Submit
-            <i class="material-icons right">send</i>
-          </button>
-                
+            <h4>Question 3</h4>
+            <h6>You find it easy to stay relaxed and focused even when there is some pleasure.</h6>
+            <div class="input-field col s12">
+                <select id="q3">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <h4>Question 4</h4>
+            <h6>You rarely do something just out of sheer curiosity.</h6>
+            <div class="input-field col s12">
+                <select id="q4">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <h4>Question 5</h4>
+            <h6>Your mind is always buzzing with unexplored ideas and plans.</h6>
+            <div class="input-field col s12">
+                <select id="q5">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <h4>Question 6</h4>
+            <h6>It is often difficult for you to relate to other people's feelings.</h6>
+            <div class="input-field col s12">
+                <select id="q6">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <h4>Question 7</h4>
+            <h6>In a discussion, truth should be more important than people's sensitivities.</h6>
+            <div class="input-field col s12">
+                <select id="q7">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <h4>Question 8</h4>
+            <h6>You rarely get carried away by fantasies and ideas.</h6>
+            <div class="input-field col s12">
+                <select id="q8">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <h4>Question 9</h4>
+            <h6>You think that everyone's views should be respected regardless of whether they are supported by facts
+                or not.</h6>
+            <div class="input-field col s12">
+                <select id="q9">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <h4>Question 10</h4>
+            <h6>You feel more energetic after spending time with a group of people.</h6>
+            <div class="input-field col s12">
+                <select id="q10">
+                    <option value="" selected>Choose your option</option>
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                </select>
+            </div>
+
         </form>
+        <button class="btn waves-effect waves-light modal-trigger" type="submit" name="action" id="submit" href="#modal1">Submit
+            <i class="material-icons right">send</i>
+        </button>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Your Results</h4>
+                <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+
     </div>
     <a href="/">go back home...</a>
+    <script src='https://code.jquery.com/jquery-3.3.1.js' integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60='
+        crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js'></script>
     <script>
-        document.querySelector("#submit").addEventListener("click", function(event){
-            event.preventDefault()
-            console.log("working!")
-            fetch("/api/friends",
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json; charset=utf-8' },
-                body: JSON.stringify({
-                firstName: document.querySelector('#first_name').value,
-                lastName: document.querySelector('#last_name').value,               
-                })
-            }, 
-            function(){
-                
-            })
 
-            .then(r => {console.log(r)})
-            .catch(e => {console.error(e)})
+        // ~~~~~~~~~~ Select option initializer ~~~~~~~~~~~~~~~~~~//
+        $(document).ready(function () {
+            $('select').not('.disabled').formSelect();
+        });
+
+        // ~~~~~~~~~~~ Modal initializer ~~~~~~~~~~~~~~~~~~~~~~~~//
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+
+
+        document.querySelector("#submit").addEventListener("click", function (event) {
+            event.preventDefault()
+            let myAnswers = []
+            myAnswers.push($('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val())
+            
+            console.log("this is the first temp array after button has been clicked"+ myAnswers)
+
+            fetch("/api/friends",
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                    body: JSON.stringify({
+                        name: document.querySelector('#name').value,
+                        photo: document.querySelector('#photo').value,
+                        scores: myAnswers
+                    })
+                })
+
+                .then(r => {
+                    console.log(r)
+                })
+                .catch(e => { console.error(e) })
+
+                myAnswers = []
+                console.log(`here is the cleared array ${myAnswers}`)
         })
+
     </script>
 </body>
+
 </html>
