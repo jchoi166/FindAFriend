@@ -1,7 +1,7 @@
 
 const calculator = function (myScores) {
-  testscore = myScores.scores
-  
+  let testscore = myScores.scores
+  let newfriendData = ""
   // Calculator that takes two rays and finds the difference between corresponding scores using absolute value. Returns as new array.
   const differenceCalc = function (friendscore) {
       let tempArray = []
@@ -23,18 +23,24 @@ const calculator = function (myScores) {
           friendscore = x.scores
           let diffScore = differenceCalc(friendscore)
           let friendTotal = diffScore.reduce(add)
-          rankArray.push(friendTotal)
+          reduceArray.push(friendTotal)
       })
-      reduceArray = rankArray
-      console.log("reducearray" + reduceArray)
-      console.log("rankarray" + rankArray)
+      rankArray = reduceArray
+      // console.log("reducearray" + reduceArray)
+      // console.log("rankarray" + rankArray)
       let lowestScore = Math.min(...reduceArray)
-      console.log("lowest score" + lowestScore)
+      // console.log("lowest score" + lowestScore)
+      let placefinder = rankArray.indexOf(lowestScore)
+      newfriendData = friends[placefinder]
+      
+      // console.log(newfriendData)
+      
+      // console.log("placefinder: " + placefinder)
       
 
   }
   smallestNum()
-  
+  return newfriendData
 }
 
 

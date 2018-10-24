@@ -182,13 +182,8 @@
             $('.modal').modal();
         });
 
-
-        document.querySelector("#submit").addEventListener("click", function (event) {
-            event.preventDefault()
-            let myAnswers = []
-            myAnswers.push($('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val())
-            
-            console.log("this is the first temp array after button has been clicked"+ myAnswers)
+        // ~~~~~~~~~~~ Post Info Fetch Request ~~~~~~~~~~~~~~~~~~~~~~~//
+        var postInfo = function () {
 
             fetch("/api/friends",
                 {
@@ -203,11 +198,36 @@
 
                 .then(r => {
                     console.log(r)
+                    
                 })
                 .catch(e => { console.error(e) })
 
-                myAnswers = []
-                console.log(`here is the cleared array ${myAnswers}`)
+            myAnswers = []
+            console.log(`here is the cleared array ${myAnswers}`)
+        }
+
+        var findFriend = function () {
+            fetch('/api/finder')
+                .then(r => r.json())
+                .then(r => {
+                    document.querySelector('#bookList').innerHTML = ''
+                    r.forEach(book => {
+                        let bookItem = document.createElement('li')
+                        bookItem.innerHTML = book.name
+                        document.querySelector('#bookList').appendChild(bookItem)
+                    })
+                })
+                .catch(e => console.error(e))
+        }
+
+        document.querySelector("#submit").addEventListener("click", function (event) {
+            event.preventDefault()
+            let myAnswers = []
+            myAnswers.push($('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val())
+
+            console.log("this is the first temp array after button has been clicked" + myAnswers)
+
+
         })
 
     </script>

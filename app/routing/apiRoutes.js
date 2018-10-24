@@ -1,7 +1,7 @@
 // const calc = require('../data/calc')
 const friends = require('../data/friends')
 
-
+var newFriend = ""
 module.exports = function (app){
 
     app.get('/api/friends', function (req, res){
@@ -11,10 +11,12 @@ module.exports = function (app){
         res.sendStatus(200)
         newInfo = req.body
         newFriend = friends.calculator(newInfo)
-        // console.log('this is new friend after calculator has run:' + newFriend)
+        console.log(newFriend)
         friends.friendInfo.push(newInfo)
         console.log("new data added!")
         console.log(newInfo)
     })
-    
+    app.get('/api/finder', function(req,res){
+        res.send(newFriend)
+    })
 }
