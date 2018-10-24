@@ -158,7 +158,8 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <h4>Your Results</h4>
-                <p>A bunch of text</p>
+                    <div id="newfriendInfo">
+                    </div>
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -171,7 +172,6 @@
         crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js'></script>
     <script>
-
         // ~~~~~~~~~~ Select option initializer ~~~~~~~~~~~~~~~~~~//
         $(document).ready(function () {
             $('select').not('.disabled').formSelect();
@@ -182,9 +182,12 @@
             $('.modal').modal();
         });
 
+
         // ~~~~~~~~~~~ Post Info Fetch Request ~~~~~~~~~~~~~~~~~~~~~~~//
         var postInfo = function () {
-
+            let myAnswers = []
+            myAnswers.push($('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val())
+            console.log("this is the first temp array after button has been clicked" + myAnswers)
             fetch("/api/friends",
                 {
                     method: 'POST',
@@ -197,37 +200,34 @@
                 })
 
                 .then(r => {
-                    console.log(r)
-                    
+                    myAnswers = []
+                    console.log(`here is the cleared array ${myAnswers}`)
+                    findFriend()
                 })
                 .catch(e => { console.error(e) })
 
-            myAnswers = []
-            console.log(`here is the cleared array ${myAnswers}`)
+
         }
 
         var findFriend = function () {
             fetch('/api/finder')
                 .then(r => r.json())
                 .then(r => {
-                    document.querySelector('#bookList').innerHTML = ''
-                    r.forEach(book => {
-                        let bookItem = document.createElement('li')
-                        bookItem.innerHTML = book.name
-                        document.querySelector('#bookList').appendChild(bookItem)
-                    })
+                    console.log(r)
+                    $("#newfriendInfo").empty()
+                    $("#newfriendInfo").append(`
+                     <h6>${r.name}</h6>
+                     <img src="${r.photo}" alt="Sorry, no picture!">
+                    `)
                 })
                 .catch(e => console.error(e))
-        }
+            }
+
 
         document.querySelector("#submit").addEventListener("click", function (event) {
             event.preventDefault()
-            let myAnswers = []
-            myAnswers.push($('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(), $('#q9').val(), $('#q10').val())
 
-            console.log("this is the first temp array after button has been clicked" + myAnswers)
-
-
+            postInfo()
         })
 
     </script>
